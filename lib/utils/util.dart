@@ -1,7 +1,7 @@
 mixin Util{
 static bool isNumeric(String s) {
     
-    if (s == null || s.contains('-')) {
+    if (s.contains('-')) {
       return false;
     }
     String finalString = s.replaceAll('.','').replaceAll('0','');

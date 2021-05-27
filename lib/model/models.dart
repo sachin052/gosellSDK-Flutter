@@ -1,11 +1,12 @@
+
 class Reference {
-  String acquirer;
-  String gateway;
-  String payment;
-  String track;
-  String transaction;
-  String order;
-  String gosellID;
+  String? acquirer;
+  String? gateway;
+  String? payment;
+  String? track;
+  String? transaction;
+  String? order;
+  String? gosellID;
 
   Reference(
       {this.acquirer,
@@ -32,7 +33,7 @@ class Reference {
 class Receipt {
   bool sms;
   bool email;
-  String id;
+  String? id;
   Receipt(this.sms, this.email, {this.id});
 
   Map<String, dynamic> toJson() {
@@ -45,16 +46,16 @@ class Receipt {
 }
 
 class Customer {
-  String firstName;
-  String middleName;
-  String lastName;
-  String email;
+  String? firstName;
+  String? middleName;
+  String? lastName;
+  String? email;
   // Phone phone;
 
-  String isdNumber;
-  String number;
-  String customerId;
-  String metaData;
+  String? isdNumber;
+  String? number;
+  String? customerId;
+  String? metaData;
 
   Customer(
       {this.isdNumber,
@@ -85,10 +86,10 @@ class Customer {
 class Destinations {
   double amount;
   String currency;
-  int count;
-  List<Destination> destinationlist;
+  int? count;
+  List<Destination>? destinationlist;
 
-  Destinations({this.amount, this.currency, this.count, this.destinationlist});
+  Destinations({required this.amount, required this.currency, this.count, this.destinationlist});
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
@@ -98,7 +99,7 @@ class Destinations {
 
     if (this.destinationlist != null) {
       data['destination'] =
-          this.destinationlist.map((v) => v.toJson()).toList();
+          this.destinationlist?.map((v) => v.toJson()).toList();
     }
 
     return data;
@@ -106,11 +107,11 @@ class Destinations {
 }
 
 class Destination {
-  String id;
-  double amount;
-  String currency;
-  String description;
-  String reference;
+  String? id;
+  double? amount;
+  String? currency;
+  String? description;
+  String? reference;
 
   Destination(
       {this.id, this.amount, this.currency, this.description, this.reference});
@@ -127,13 +128,13 @@ class Destination {
 }
 
 class PaymentItem {
-  int amountPerUnit;
-  String description;
-  Map<String, Object> discount;
-  String name;
-  Quantity quantity;
-  List<Tax> taxes;
-  int totalAmount;
+  int? amountPerUnit;
+  String? description;
+  Map<String, Object>? discount;
+  String? name;
+  Quantity? quantity;
+  List<Tax>? taxes;
+  int? totalAmount;
 
   PaymentItem(
       {this.amountPerUnit,
@@ -153,11 +154,11 @@ class PaymentItem {
     data['name'] = this.name;
 
     if (this.quantity != null) {
-      data['quantity'] = this.quantity.toJson();
+      data['quantity'] = this.quantity?.toJson();
     }
 
     if (this.taxes != null) {
-      data['taxes'] = this.taxes.map((v) => v.toJson()).toList();
+      data['taxes'] = this.taxes?.map((v) => v.toJson()).toList();
     }
 
     data['total_amount'] = this.totalAmount;
@@ -167,10 +168,10 @@ class PaymentItem {
 }
 
 class Amount {
-  String type;
-  double value;
-  double maximumFee;
-  double minimumFee;
+  String? type;
+  double? value;
+  double? maximumFee;
+  double? minimumFee;
   Amount({this.type, this.value, this.maximumFee, this.minimumFee});
 
   Map<String, dynamic> toJson() {
@@ -184,7 +185,7 @@ class Amount {
 }
 
 class Quantity {
-  int value;
+  int? value;
 
   Quantity({this.value});
 
@@ -196,9 +197,9 @@ class Quantity {
 }
 
 class Tax {
-  String name;
-  String description;
-  Amount amount;
+  String? name;
+  String? description;
+  Amount? amount;
 
   Tax({this.amount, this.name, this.description});
 
@@ -207,16 +208,16 @@ class Tax {
     data['name'] = this.name;
     data['description'] = this.description;
     if (this.amount != null) {
-      data['amount'] = this.amount.toJson();
+      data['amount'] = this.amount?.toJson();
     }
     return data;
   }
 }
 
 class Shipping {
-  String name;
-  String description;
-  double amount;
+  String? name;
+  String? description;
+  double? amount;
 
   Shipping({this.name, this.description, this.amount});
 
@@ -230,8 +231,8 @@ class Shipping {
 }
 
 class AuthorizeAction {
-  AuthorizeActionType type;
-  int timeInHours;
+  AuthorizeActionType? type;
+  int? timeInHours;
 
   AuthorizeAction({this.type, this.timeInHours});
 

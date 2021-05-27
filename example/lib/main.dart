@@ -42,9 +42,9 @@ class _MyAppState extends State<MyApp> {
   // configure app key and bundle-id (You must get those keys from tap)
   Future<void> configureApp() async {
     GoSellSdkFlutter.configureApp(
-        bundleId: Platform.isAndroid ? "ANDROIID-PACKAGE-NAME" : "iOS-BUNDLE-ID",
+        bundleId: Platform.isAndroid ? "com.android.luxusell" : "iOS-BUNDLE-ID",
         productionSecreteKey: Platform.isAndroid ? "Android-Live-Key" : "iOS-Live-Key",
-        sandBoxsecretKey: Platform.isAndroid ? "Android-SANDBOX-KEY" : "iOS-SANDBOX-KEY",
+        sandBoxsecretKey: Platform.isAndroid ? "sk_test_hPsFL3g4jDpwyk0YU1qTvxWM" : "iOS-SANDBOX-KEY",
         lang: "ar");
   }
 
@@ -198,24 +198,24 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  void printSDKResult(String trx_mode) {
-    print('$trx_mode status                : ${tapSDKResult['status']}');
-    print('$trx_mode id               : ${tapSDKResult['charge_id']}');
-    print('$trx_mode  description        : ${tapSDKResult['description']}');
-    print('$trx_mode  message           : ${tapSDKResult['message']}');
-    print('$trx_mode  card_first_six : ${tapSDKResult['card_first_six']}');
-    print('$trx_mode  card_last_four   : ${tapSDKResult['card_last_four']}');
-    print('$trx_mode  card_object         : ${tapSDKResult['card_object']}');
-    print('$trx_mode  card_brand          : ${tapSDKResult['card_brand']}');
-    print('$trx_mode  card_exp_month  : ${tapSDKResult['card_exp_month']}');
-    print('$trx_mode  card_exp_year: ${tapSDKResult['card_exp_year']}');
-    print('$trx_mode  acquirer_id  : ${tapSDKResult['acquirer_id']}');
-    print('$trx_mode  acquirer_response_code : ${tapSDKResult['acquirer_response_code']}');
-    print('$trx_mode  acquirer_response_message: ${tapSDKResult['acquirer_response_message']}');
-    print('$trx_mode  source_id: ${tapSDKResult['source_id']}');
-    print('$trx_mode  source_channel     : ${tapSDKResult['source_channel']}');
-    print('$trx_mode  source_object      : ${tapSDKResult['source_object']}');
-    print('$trx_mode source_payment_type : ${tapSDKResult['source_payment_type']}');
+  void printSDKResult(String trxMode) {
+    print('$trxMode status                : ${tapSDKResult['status']}');
+    print('$trxMode id               : ${tapSDKResult['charge_id']}');
+    print('$trxMode  description        : ${tapSDKResult['description']}');
+    print('$trxMode  message           : ${tapSDKResult['message']}');
+    print('$trxMode  card_first_six : ${tapSDKResult['card_first_six']}');
+    print('$trxMode  card_last_four   : ${tapSDKResult['card_last_four']}');
+    print('$trxMode  card_object         : ${tapSDKResult['card_object']}');
+    print('$trxMode  card_brand          : ${tapSDKResult['card_brand']}');
+    print('$trxMode  card_exp_month  : ${tapSDKResult['card_exp_month']}');
+    print('$trxMode  card_exp_year: ${tapSDKResult['card_exp_year']}');
+    print('$trxMode  acquirer_id  : ${tapSDKResult['acquirer_id']}');
+    print('$trxMode  acquirer_response_code : ${tapSDKResult['acquirer_response_code']}');
+    print('$trxMode  acquirer_response_message: ${tapSDKResult['acquirer_response_message']}');
+    print('$trxMode  source_id: ${tapSDKResult['source_id']}');
+    print('$trxMode  source_channel     : ${tapSDKResult['source_channel']}');
+    print('$trxMode  source_object      : ${tapSDKResult['source_object']}');
+    print('$trxMode source_payment_type : ${tapSDKResult['source_payment_type']}');
     responseID = tapSDKResult['charge_id'];
   }
 
